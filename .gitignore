@@ -3,4 +3,5 @@
 foo.txt
 # Ignore (generated) html files,
 *.xml
+*.qq
 *.exe

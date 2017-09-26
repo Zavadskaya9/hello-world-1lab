@@ -1,0 +1,6 @@
+E:\УЧЕБА\VISUAL STUDIO (проекты)\2labaOOP\2labaOOP\bin\Debug\2labaOOP.exe.config
+E:\УЧЕБА\VISUAL STUDIO (проекты)\2labaOOP\2labaOOP\bin\Debug\2labaOOP.exe
+E:\УЧЕБА\VISUAL STUDIO (проекты)\2labaOOP\2labaOOP\bin\Debug\2labaOOP.pdb
+E:\УЧЕБА\VISUAL STUDIO (проекты)\2labaOOP\2labaOOP\obj\Debug\2labaOOP.csprojResolveAssemblyReference.cache
+E:\УЧЕБА\VISUAL STUDIO (проекты)\2labaOOP\2labaOOP\obj\Debug\2labaOOP.exe
+E:\УЧЕБА\VISUAL STUDIO (проекты)\2labaOOP\2labaOOP\obj\Debug\2labaOOP.pdb

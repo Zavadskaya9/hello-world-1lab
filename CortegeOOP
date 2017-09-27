@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cortege2OOP
+{
+    class Program
+    {
+       
+
+        static void Main(string[] args)
+        {
+
+             Console.Write("********************************\nКортежи: \n");
+             int tu1 = 112341234;//Item1
+             string tu2 = "Viktoriya";//Item2
+             char tu3 = 'q';//Item3
+             string tu4 = "Hello";//Item4
+             ulong tu5 = 7;//Item5
+            var tuples = Tuple.Create<int, string,char,string,ulong>(tu1,tu2,tu3,tu4,tu5);
+            var tuples2 = Tuple.Create<int, string, char, string, ulong>(tu1, tu2, tu3, tu4, tu5);
+            Console.WriteLine(tuples);
+            Console.WriteLine(tuples.Item1 + tuples.Item2 + tuples.Item4);
+
+           
+           if (tuples == tuples2) { Console.WriteLine("\nКортежи равны!\n"); }
+           else { Console.WriteLine("\nКортежи не равны!\n"); }
+           /* **************** */       
+            int[] bbb = {1,2,3,4,5,6};
+           Console.WriteLine("********************************");
+            Console.WriteLine("\tMIN | MAX | SUM | FIRST\t");
+            Console.WriteLine("\t{0}\t",fun(tu2, bbb));
+
+        }
+        static Tuple<int, int, int, char> fun(string a, int[] b)
+        {
+            int min = 0, max = 0, sum = 0; char h;
+            foreach(int key in b)
+            {
+                if (key > max) { max = key; }
+                if (key < min) { min = key; }
+                sum += key;
+            }
+            h = a[0];
+            var tuples = Tuple.Create<int, int, int, char>(min, max, sum, h);
+            return tuples;
+
+       
+
+             Console.ReadLine();
+
+        }
+
+
+           
+       
+    }
+}

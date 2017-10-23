@@ -1,0 +1,211 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace laba3
+{
+    class SuperString
+    {
+      
+        public string w;
+        public char q;
+        static string d;//Статическая переменная, которая должна быть инициализирована во время выполнения.
+        public const int defaultLen = 10; //константа
+        private string pik;
+        private int len;
+        private static int itCount;//закрытое статик поле счетчик объектов закрытый конструктор (доступен только классу)
+      
+      
+
+        public static double SqrCircle(string dlina)
+        {
+            return dlina.Length;
+
+       
+        } // Статический конструктор вызывается не более одного раза, прежде чем вызывается конструктор экземпляра или доступен доступ к элементу.
+
+
+        private SuperString()//закрытый конструктор
+        {
+
+            len = pik.Length;
+            //сохраняем размер в закрытом поле
+            len = defaultLen;
+            //увеличиваем статичный счетчик обектов
+            itCount++;
+            //инициализируем readonly поле 
+
+
+        }
+    
+    }
+
+ 
+   
+  public partial class Student : System.Object//тип, явно производный от Object
+  {
+      private string something="qwe";
+         public override string ToString()
+        { return base.ToString(); }
+               public override bool Equals(object obj)
+         { if (obj == null) return false;
+         if (obj.GetType() != this.GetType()) return false;
+         Student stud = (Student)obj;
+         return true;
+         }
+               public override int GetHashCode()
+               {
+                   return this.something.GetHashCode();
+               }
+              
+    }
+
+
+
+
+// ref and out
+    class Cmin
+    {
+     
+        public static int minabs(ref string x, ref char y)
+        {
+            x = x+y;
+            return 0;
+        }
+    }
+
+    class CA
+    {
+        public string x, y, z;
+        public readonly int rd;
+        public CA()
+        {
+            x = "Vika";
+            y = "Zavadskaya";
+            z = x + y;
+            rd = x.Length + y.Length + z.Length;
+        }
+        public CA(string a, string b)
+        {
+            x = a;
+            y = b;
+            z = a + b;
+            rd = x.Length + y.Length + z.Length;
+        }
+        public CA(string a, string b, string c)
+        {
+            x = a;
+            y = b;
+            z = c;
+            rd = x.Length + y.Length + z.Length;
+        }
+    }
+
+    class getset
+    {
+        private string name;
+        private string work="Vika";
+        public string Name
+        {
+
+            set
+            {
+                if (value != work)
+                { Console.WriteLine("неверный ввод"); }
+                else { name = value; Console.WriteLine("верный ввод"); }//Установка необходимых данных
+            }
+            get { return name; }//Возврат необходимых данных
+        }
+
+    }
+   
+
+class Class1
+{
+
+[STAThread]
+static void Main(string[] args)
+{
+    String liniya2 = "==============---------------=================";
+
+Console.WriteLine(liniya2);
+
+CA obj = new CA();
+Console.WriteLine("x={0,2} y={1,2} z={2,2}", obj.x, obj.y, obj.z);
+CA obj3 = new CA("pik", "puk");
+Console.WriteLine("x={0,2} y={1,2} z={2,2}", obj3.x, obj3.y, obj3.z);
+CA obj2 = new CA("pik", "puk", "pek");
+Console.WriteLine("x={0,2} y={1,2} z={2,2}", obj2.x, obj2.y, obj2.z);
+Console.WriteLine("поля для чтения{0,2} {1,2} {2,2}", obj.rd, obj3.rd, obj2.rd);
+
+Console.WriteLine(liniya2);
+
+string r = "qweqweeqweeqwe";
+// Вызов методов из другого класса
+// без создания экземпляра объекта этого класса
+Console.WriteLine("статический конструктор");
+Console.WriteLine("Длина слова {0} = {1:#.##}", r, SuperString.SqrCircle(r));
+
+Console.WriteLine(liniya2);
+
+    //get and set
+Console.WriteLine("сравнение Vika и Vika с помощью get,set");
+getset Vika= new getset();
+Vika.Name = "Vika";
+
+Console.WriteLine(liniya2);
+
+    //ref and out
+string a = "Vika";
+char b = 'i' ;
+Console.WriteLine("a={0} b={1}", a, b);
+
+int k = Cmin.minabs(ref a, ref b);
+Console.WriteLine("Соединение string and char через ref");
+Console.WriteLine("a={0}", a);
+
+Console.WriteLine(liniya2);
+
+Student vika = new Student();
+Console.WriteLine("{0}--адрес odject", vika.ToString());
+
+Console.WriteLine(liniya2);
+Console.WriteLine("object vikachka и fuuu находятся в одном классе?");
+Student vikachka = new Student();
+Student fuuu = new Student();
+Console.WriteLine(vikachka.Equals(fuuu));
+Console.WriteLine(liniya2);
+Console.WriteLine(vikachka.GetHashCode());
+
+Console.WriteLine(liniya2);
+object[] arrByObject = { "Hello", "hi", "Vika", "Masha" };
+// Выведем в консоль тип каждого члена массива
+foreach (object me in arrByObject)
+Console.WriteLine("Тип {0} - {1}", me, me.GetType());
+Console.WriteLine("----Вывод слов из массива объектов 4 буквы----");
+    char buk='i';
+int number = 4;
+    string qwe;
+for (int i = 0; i < arrByObject.Length;i++ )
+{
+   qwe= (string)arrByObject[i];
+   if (qwe.Length == number)
+       Console.WriteLine("{0}---{1}", i+1, qwe);
+    for(int q=0;q<qwe.Length;q++)
+    {
+        if (qwe[q] == buk)
+            Console.WriteLine("{0}---в слове---{1} буква i", i+1, q+1);
+       
+    }
+   
+}
+
+    Console.WriteLine(liniya2);
+
+
+Console.ReadKey();
+}
+}
+}
